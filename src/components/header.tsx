@@ -3,12 +3,12 @@ import { Separator } from "./ui/separator";
 export default function Header() {
   return (
     <header className="pt-24">
-      <span className="px-2 text-xl font-bold">Khoo Wu Chuan</span>
-      <p className="px-2 text-sm text-neutral-400">
+      <span className="p-2 text-xl font-bold">Khoo Wu Chuan</span>
+      <p className="p-2 text-sm text-neutral-400">
         Final Year Computing Undergraduate at National University of Singapore
       </p>
-      <Separator className="my-4 opacity-50 bg-neutral-700" />
-      <ul className="flex justify-between h-5 px-4 text-sm">
+      <Separator className="my-3 opacity-50 bg-neutral-700" />
+      <ul className="flex justify-between h-5 px-6 text-sm">
         <li>About</li>
         <Separator
           orientation="vertical"
@@ -25,11 +25,6 @@ export default function Header() {
           className="opacity-50 bg-neutral-700"
         />
         <li>Blog</li>
-        <Separator
-          orientation="vertical"
-          className="opacity-50 bg-neutral-700"
-        />
-        <li>Contact</li>
       </ul>
       <Separator className="my-4 opacity-50 bg-neutral-700" />
     </header>
