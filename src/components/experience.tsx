@@ -8,7 +8,13 @@ export default function Experience() {
       <Separator className="mt-1 mb-3 opacity-50 bg-neutral-700" />
       <p className="px-2 mb-2">
         <span className="text-emerald-400">Currently - </span>
-        Blockchain Developer at NUS Fintech Society
+        Blockchain Developer at{" "}
+        <a
+          href="https://fintechsociety.comp.nus.edu.sg/"
+          className="hover:underline underline-offset-2"
+        >
+          NUS Fintech Society
+        </a>
       </p>
 
       <p className="px-2 mb-2">

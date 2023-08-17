@@ -8,25 +8,6 @@ export default function Header() {
         Final Year Computing Undergraduate at National University of Singapore
       </p>
       <Separator className="my-3 opacity-50 bg-neutral-700" />
-      {/* <ul className="flex justify-between h-5 px-6 text-sm">
-        <li>About</li>
-        <Separator
-          orientation="vertical"
-          className="opacity-50 bg-neutral-700"
-        />
-        <li>Experience</li>
-        <Separator
-          orientation="vertical"
-          className="opacity-50 bg-neutral-700"
-        />
-        <li>Projects</li>
-        <Separator
-          orientation="vertical"
-          className="opacity-50 bg-neutral-700"
-        />
-        <li>Blog</li>
-      </ul>
-      <Separator className="my-4 opacity-50 bg-neutral-700" /> */}
     </header>
   );
 }

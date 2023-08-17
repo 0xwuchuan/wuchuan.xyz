@@ -7,7 +7,12 @@ export default function Project() {
       <h1 className="px-2 text-sm text-neutral-400">Projects</h1>
       <Separator className="mt-1 mb-3 opacity-50 bg-neutral-700" />
       <div className="flex justify-between px-2">
-        <p className="mb-2">SynchroNUS</p>
+        <a
+          href="https://github.com/0xwuchuan/BT3103_SynchroNUS"
+          className="mb-2 hover:underline underline-offset-2"
+        >
+          SynchroNUS
+        </a>
         {/* Date */}
         <p className="text-sm text-neutral-400">2022</p>
       </div>

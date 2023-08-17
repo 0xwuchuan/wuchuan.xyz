@@ -8,7 +8,12 @@ export default function Footer() {
         <p className="px-2 text-sm text-neutral-300">contact me</p>
         {/* For all contact methods */}
         <div>
-          <p className="px-2 text-sm text-neutral-300">email</p>
+          <a
+            href="mailto: wuchuan@skiff.com"
+            className="px-2 text-sm text-neutral-300"
+          >
+            email
+          </a>
         </div>
       </div>
     </footer>
