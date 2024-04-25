@@ -16,6 +16,10 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        switzer: "Switzer",
+        chivo: "Chivo",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

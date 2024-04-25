@@ -1,13 +1,12 @@
-import { Separator } from "./ui/separator";
-
 export default function Header() {
   return (
-    <header className="pt-24">
-      <span className="p-2 text-2xl font-bold">Khoo Wu Chuan</span>
-      <p className="p-2 text-neutral-400">
+    <header className="pt-36 pb-10 font-chivo">
+      <span className="p-2 text-5xl font-black">
+        <a className="text-[#59595A]">0x</a>wuchuan
+      </span>
+      <p className="px-2 pt-4 font-light">
         Final Year Computing Undergraduate at National University of Singapore
       </p>
-      <Separator className="my-3 opacity-50 bg-neutral-700" />
     </header>
   );
 }
