@@ -1,17 +1,13 @@
 import Header from "@/components/header";
-import Footer from "@/components/footer";
 import About from "@/components/about";
-import Experience from "@/components/experience";
-import Projects from "@/components/projects";
+import Cards from "@/components/cards";
 
 export default function Home() {
   return (
-    <div className="max-w-2xl px-10 grow">
+    <div className="max-w-4xl px-10 grow text-white">
       <Header />
       <About />
-      <Experience />
-      <Projects />
-      <Footer />
+      <Cards />
     </div>
   );
 }
