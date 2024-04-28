@@ -75,26 +75,6 @@
     body {
         @apply bg-background text-foreground;
     }
-    @font-face {
-        font-family: "Switzer";
-        src: url("../public/fonts/Switzer-Regular.otf") format("otf");
-        font-weight: 400;
-    }
-    @font-face {
-        font-family: "Switzer";
-        src: url("../public/fonts/Switzer-Semibold.otf") format("otf");
-        font-weight: 600;
-    }
-    @font-face {
-        font-family: "Chivo";
-        src: url("../public/fonts/Chivo-Black.ttf") format("ttf");
-        font-weight: 900;
-    }
-    @font-face {
-        font-family: "Chivo";
-        src: url("../public/fonts/Chivo-Regular.ttf") format("ttf");
-        font-weight: 400;
-    }
 }
 
 body {

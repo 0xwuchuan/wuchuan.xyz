@@ -17,8 +17,9 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        switzer: "Switzer",
-        chivo: "Chivo",
+        switzer: ["var(--font-switzer)", "var(--font-inter)"],
+        satoshi: ["var(--font-satoshi)"],
+        chivo: ["var(--font-chivo)"],
       },
       colors: {
         border: "hsl(var(--border))",
