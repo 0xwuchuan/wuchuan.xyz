@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 type CardProps = {
   cardColor: string;
@@ -6,25 +7,46 @@ type CardProps = {
   cardDesc: string;
 };
 
+type colorConfigType = {
+  bg: string;
+  border: string;
+  text: string;
+};
+
+const colorConfig: Record<string, colorConfigType> = {
+  red: {
+    bg: "hover:bg-red-900",
+    border: "hover:border-red-500",
+    text: "hover:text-red-500",
+  },
+  blue: {
+    bg: "hover:bg-blue-900",
+    border: "hover:border-blue-500",
+    text: "hover:text-blue-500",
+  },
+  yellow: {
+    bg: "hover:bg-yellow-900",
+    border: "hover:border-yellow-500",
+    text: "hover:text-yellow-500",
+  },
+};
+
 export default function Card(props: CardProps) {
   return (
-    <div
+    <Link
       className={cn(
-        props.cardColor,
-        "min-h-[300px] min-w-[235px] rounded-3xl ",
-        "hover:translate-y-5",
-        "transform transition duration-100 ease-in-out hover:-translate-y-1",
-        "hover:shadow-lg",
+        "font-satoshi py-2 px-6 my-3",
+        `${colorConfig[props.cardColor].bg} hover:bg-opacity-25`,
+        `hover:border-l-2 ${colorConfig[props.cardColor].border}`,
+        colorConfig[props.cardColor].text,
+        "border-l-2 transition duration-100 ease-linear",
       )}
+      href={`/${props.cardName}`}
     >
-      <div className="px-6 pt-4">
-        <h2 className="text-lg font-chivo font-semibold md:text-2xl">
-          {props.cardName}
-        </h2>
-        <p className="font-switzer max-w-full pt-2 text-sm sm:text-base md:max-w-[65%]">
-          {props.cardDesc}
-        </p>
+      <div className="">
+        <h2 className="text-lg font-bold ">{props.cardName}</h2>
+        <p className="pt-2 font-light">{props.cardDesc}</p>
       </div>
-    </div>
+    </Link>
   );
 }
