@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Backend Engineer Intern",
+    "place": "Univers",
+    "placelink": "https://univers.com/",
+    "year": "current",
+    "descriptions": ["Implement new features in EnOS IoT platform using Java"]
+  },
+  {
+    "title": "Undergraduate Teaching Assistant (CS2030 Programming Methodology II)",
+    "place": "NUS Computing",
+    "placelink": "https://www.comp.nus.edu.sg/",
+    "year": "2022",
+    "descriptions": [
+      "Engaged with students on a weekly basis, offering hands-on assistance with assignments focused on object-oriented and functional programming",
+      "Guided students through development of medium-scale programs in Java while emphasizing best coding practices"
+    ]
+  },
+  {
+    "title": "Blockchain Engineer Intern",
+    "place": "Nested Technologies",
+    "placelink": "https://nested.ai/",
+    "year": "2022",
+    "descriptions": [
+      "Developed, deployed and maintained smart contracts on the Ethereum Mainnet utilizing Solidity, Hardhat and Foundry",
+      "Designed and implemented a web application for users to seamlessly interact with the Ethereum Blockchain, employing technologies and libraries such as Next.js, TailwindCSS, and ethers.js",
+      "Maintained and improved existing codebases using Python, Django, Docker and AWS Technologies"
+    ]
+  }
+]
