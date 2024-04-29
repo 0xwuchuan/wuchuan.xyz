@@ -5,7 +5,7 @@ export default function Cards() {
     <section className="flex flex-col w-full p-2">
       <Card
         cardColor="blue"
-        cardName="experience"
+        cardName="experiences"
         cardDesc="places i've worked"
       />
       <Card cardColor="red" cardName="projects" cardDesc="stuff i've done" />

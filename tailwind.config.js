@@ -22,6 +22,7 @@ module.exports = {
         chivo: ["var(--font-chivo)"],
       },
       colors: {
+        gray: "#59595A",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
