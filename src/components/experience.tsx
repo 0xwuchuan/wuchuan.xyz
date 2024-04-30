@@ -15,7 +15,7 @@ export function Experience(props: ExperienceProps) {
         href={props.placelink}
         className="hover:underline hover:text-blue-500 transition duration-100 ease-in"
       >
-        <p className="mb-3 font-bold">
+        <p className="mb-2 font-bold">
           {props.title} at {props.place}
         </p>
       </Link>
