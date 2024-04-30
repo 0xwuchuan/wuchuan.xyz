@@ -1,0 +1,23 @@
+[
+  {
+    "name": "fintechies",
+    "link": "https://github.com/0xwuchuan/BC_On_Chain_Membership",
+    "description": "cute ascii art rendered on chain using solidity for the nus fintech society. heavily inspired by fiveoutofnine",
+    "status": "completed",
+    "order": 1
+  },
+  {
+    "name": "synchronus",
+    "link": "https://github.com/0xwuchuan/BT3103_SynchroNUS",
+    "description": "small school project - web app for nus students to post events for people to join. had a blast developing this with great teammates and learning vue + tailwind",
+    "status": "completed",
+    "order": 2
+  },
+  {
+    "name": "nocapreviews",
+    "link": "https://github.com/0xwuchuan/orbital-noCapreviews",
+    "description": "very first web app done as part of nus computing's orbital project. very basic stuff but marked the beginning of my university (also the name is kinda banger)",
+    "status": "completed",
+    "order": 2
+  }
+]

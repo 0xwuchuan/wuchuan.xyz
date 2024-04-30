@@ -9,10 +9,6 @@ const satoshi = localfont({
   src: "./fonts/Satoshi-Variable.ttf",
   variable: "--font-satoshi",
 });
-const switzer = localfont({
-  src: "./fonts/Switzer-Variable.ttf",
-  variable: "--font-switzer",
-});
 
 export const metadata: Metadata = {
   title: {
@@ -37,7 +33,6 @@ export default function RootLayout({
         className={`flex flex-col items-center min-h-screen overflow-x-hidden
           ${chivo.variable}
           ${satoshi.variable}
-          ${switzer.variable}
           ${inter.variable}`}
       >
         {children}
