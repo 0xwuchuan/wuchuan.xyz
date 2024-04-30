@@ -17,11 +17,11 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        switzer: ["var(--font-switzer)", "var(--font-inter)"],
-        satoshi: ["var(--font-satoshi)"],
+        satoshi: ["var(--font-satoshi), var(--font-inter)"],
         chivo: ["var(--font-chivo)"],
       },
       colors: {
+        offwhite: "#EBEBEC",
         gray: "#59595A",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
