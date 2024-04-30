@@ -17,7 +17,7 @@ export function Project(props: ProjectProps) {
       >
         <p className="mb-2 font-bold">{props.name}</p>
       </Link>
-      <ul className="space-y-2 font-light text-white/90">
+      <ul className="space-y-2 font-light text-offwhite/90">
         <li>{props.description}</li>
       </ul>
     </section>

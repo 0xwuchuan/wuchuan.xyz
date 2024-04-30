@@ -7,13 +7,13 @@ type CardProps = {
   cardDesc: string;
 };
 
-type colorConfigType = {
+type variantsType = {
   bg: string;
   border: string;
   text: string;
 };
 
-const colorConfig: Record<string, colorConfigType> = {
+const variants: { [key: string]: variantsType } = {
   red: {
     bg: "hover:bg-red-900",
     border: "hover:border-red-500",
@@ -35,10 +35,10 @@ export default function Card(props: CardProps) {
   return (
     <Link
       className={cn(
-        "font-satoshi py-2 px-6 my-3",
-        `${colorConfig[props.cardColor].bg} hover:bg-opacity-25`,
-        `hover:border-l-2 ${colorConfig[props.cardColor].border}`,
-        colorConfig[props.cardColor].text,
+        "font-satoshi text-offwhite py-2 px-6 my-3",
+        `${variants[props.cardColor].bg} hover:bg-opacity-25`,
+        `hover:border-l-2 ${variants[props.cardColor].border}`,
+        variants[props.cardColor].text,
         "border-l-2 transition duration-100 ease-linear",
       )}
       href={`/${props.cardName}`}
