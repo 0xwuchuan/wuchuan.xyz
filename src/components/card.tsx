@@ -5,6 +5,7 @@ type CardProps = {
   cardColor: string;
   cardName: string;
   cardDesc: string;
+  link: string;
 };
 
 type variantsType = {
@@ -41,7 +42,7 @@ export default function Card(props: CardProps) {
         variants[props.cardColor].text,
         "border-l-2 transition duration-100 ease-linear",
       )}
-      href={`/${props.cardName}`}
+      href={props.link}
     >
       <div className="">
         <h2 className="text-lg font-bold ">{props.cardName}</h2>

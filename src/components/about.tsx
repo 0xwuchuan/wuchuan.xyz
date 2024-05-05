@@ -16,12 +16,12 @@ export default function About() {
         in the future.
       </p>
       <p className="mb-5 lowercase">
-        currently a {currentJob.title} at{" "}
+        currently a{" "}
         <Link
           href={currentJob.placelink}
           className="hover:underline hover:text-offwhite/90 transition duration-100 ease-linear"
         >
-          {currentJob.place}
+          {currentJob.title} at {currentJob.place}
         </Link>
       </p>
       <p>

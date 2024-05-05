@@ -7,9 +7,20 @@ export default function Cards() {
         cardColor="blue"
         cardName="experiences"
         cardDesc="places i've worked"
+        link="experiences"
       />
-      <Card cardColor="red" cardName="projects" cardDesc="stuff i've done" />
-      <Card cardColor="yellow" cardName="blog" cardDesc="thoughts i've had" />
+      <Card
+        cardColor="red"
+        cardName="projects"
+        cardDesc="stuff i've done"
+        link="/projects"
+      />
+      <Card
+        cardColor="yellow"
+        cardName="blog"
+        cardDesc="thoughts i've had"
+        link="https://blog.wuchuan.xyz"
+      />
     </section>
   );
 }
