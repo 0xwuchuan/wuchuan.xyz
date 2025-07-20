@@ -19,14 +19,14 @@ export default function About() {
         currently a{" "}
         <Link
           href={currentJob.placelink}
-          className="hover:underline hover:text-tx/90 transition duration-100 ease-linear"
+          className="hover:text-cyan transition duration-100 ease-linear"
         >
           {currentJob.title} at {currentJob.place}
         </Link>
       </p>
       <p>
-        in my free time i enjoy climbing (plastic) rocks, watching/playing
-        basketball, and hanging out with friends.
+        in my free time i enjoy climbing (plastic) rocks, watching various
+        sports, and hanging out with friends.
       </p>
     </section>
   );
