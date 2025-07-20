@@ -1,9 +1,16 @@
 [
   {
+    "title": "Software Engineer",
+    "place": "OKX",
+    "placelink": "https://www.okx.com/en-sg",
+    "year": "current",
+    "description": "currently devoting myself to the security of the chain auditing smart contracts and developing security tools"
+  },
+  {
     "title": "Backend Engineer Intern",
     "place": "Univers",
     "placelink": "https://univers.com/",
-    "year": "current",
+    "year": "2024",
     "description": "wanted to be part of a big web2 company as a software engineer before i devote myself to the chain"
   },
   {

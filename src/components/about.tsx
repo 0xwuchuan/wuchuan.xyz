@@ -25,8 +25,8 @@ export default function About() {
         </Link>
       </p>
       <p>
-        in my free time i enjoy wandering the blockchain, climbing (plastic)
-        rocks and playing league
+        in my free time i enjoy climbing (plastic) rocks, watching/playing
+        basketball, and hanging out with friends.
       </p>
     </section>
   );
