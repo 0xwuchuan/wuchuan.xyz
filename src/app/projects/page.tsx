@@ -15,7 +15,7 @@ export default function Home() {
   });
 
   return (
-    <div className="max-w-4xl px-10 grow text-tx-dark">
+    <div className="max-w-4xl px-10 grow text-tx">
       <Header />
       <Breadcrumb page="projects" color="red" />
       {sortedProjects.map((project: ProjectProps, index: number) => (

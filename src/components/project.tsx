@@ -13,11 +13,11 @@ export function Project(props: ProjectProps) {
     <section className="p-2 pb-5 whitespace-normal font-satoshi leading-relaxed lowercase">
       <Link
         href={props.link}
-        className="hover:underline hover:text-red-dark transition duration-100 ease-in"
+        className="hover:underline hover:text-red transition duration-100 ease-in"
       >
         <p className="mb-2 font-bold">{props.name}</p>
       </Link>
-      <ul className="space-y-2 font-light text-tx-dark/90">
+      <ul className="space-y-2 font-light text-tx/90">
         <li>{props.description}</li>
       </ul>
     </section>

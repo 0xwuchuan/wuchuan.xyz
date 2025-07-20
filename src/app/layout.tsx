@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Chivo, Inter } from "next/font/google";
 import localfont from "next/font/local";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const chivo = Chivo({ subsets: ["latin"], variable: "--font-chivo" });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -35,7 +36,9 @@ export default function RootLayout({
           ${satoshi.variable}
           ${inter.variable}`}
       >
-        {children}
+        <ThemeProvider defaultTheme="dark">
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

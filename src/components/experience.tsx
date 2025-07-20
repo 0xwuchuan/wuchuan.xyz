@@ -13,13 +13,13 @@ export function Experience(props: ExperienceProps) {
     <section className="p-2 pb-5 whitespace-normal font-satoshi leading-relaxed lowercase">
       <Link
         href={props.placelink}
-        className="hover:underline hover:text-blue-dark transition duration-100 ease-in"
+        className="hover:underline hover:text-blue transition duration-100 ease-in"
       >
         <p className="mb-2 font-bold">
           {props.title} at {props.place}
         </p>
       </Link>
-      <ul className="space-y-2 font-light text-tx-dark/90">
+      <ul className="space-y-2 font-light text-tx/90">
         <li>{props.description}</li>
       </ul>
     </section>

@@ -4,7 +4,7 @@ import Cards from "@/components/cards";
 
 export default function Home() {
   return (
-    <div className="max-w-4xl px-10 grow text-tx-dark">
+    <div className="max-w-4xl px-10 grow text-tx">
       <Header />
       <About />
       <Cards />

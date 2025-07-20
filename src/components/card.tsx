@@ -15,19 +15,19 @@ type variantsType = {
 
 const variants: { [key: string]: variantsType } = {
   red: {
-    bg: "hover:bg-red-dark/10",
-    border: "hover:border-red-dark",
-    text: "hover:text-red-dark",
+    bg: "hover:bg-red/10",
+    border: "hover:border-red",
+    text: "hover:text-red",
   },
   blue: {
-    bg: "hover:bg-blue-dark/10",
-    border: "hover:border-blue-dark",
-    text: "hover:text-blue-dark",
+    bg: "hover:bg-blue/10",
+    border: "hover:border-blue",
+    text: "hover:text-blue",
   },
   yellow: {
-    bg: "hover:bg-yellow-dark/10",
-    border: "hover:border-yellow-dark",
-    text: "hover:text-yellow-dark",
+    bg: "hover:bg-yellow/10",
+    border: "hover:border-yellow",
+    text: "hover:text-yellow",
   },
 };
 
@@ -35,7 +35,7 @@ export default function Card(props: CardProps) {
   return (
     <Link
       className={cn(
-        "font-satoshi text-tx-dark py-2 px-6 my-3",
+        "font-satoshi text-tx py-2 px-6 my-3",
         `${variants[props.cardColor].bg} hover:bg-opacity-25`,
         `hover:border-l-2 ${variants[props.cardColor].border}`,
         variants[props.cardColor].text,

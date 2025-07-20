@@ -6,8 +6,8 @@ type BreadcrumbProps = {
 };
 
 const variants: { [key: string]: string } = {
-  red: "text-red-dark",
-  blue: "text-blue-dark",
+  red: "text-red",
+  blue: "text-blue",
 };
 
 export default function Breadcrumb(props: BreadcrumbProps) {
@@ -15,7 +15,7 @@ export default function Breadcrumb(props: BreadcrumbProps) {
     <p className="pl-2 mb-4 font-satoshi font-bold">
       <Link
         href="/"
-        className="hover:text-tx-dark/90 transition-colors duration-75 ease-in-out"
+        className="hover:text-tx/90 transition-colors duration-75 ease-in-out"
       >
         home
       </Link>

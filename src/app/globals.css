@@ -34,12 +34,32 @@
 
         --ring: 30 4% 16%;                /* #282726 - Flexoki base-900 */
 
+        /* Flexoki Base Colors - Dark Mode */
+        --tx: 40 5% 81%;                  /* #CECDC3 - Flexoki base-200 */
+        --tx-2: 40 3% 53%;                /* #878580 - Flexoki base-500 */
+        --tx-3: 40 4% 34%;                /* #575653 - Flexoki base-700 */
+        --bg: 30 6% 6%;                   /* #100F0F - Flexoki black */
+        --bg-2: 30 4% 11%;                /* #1C1B1A - Flexoki base-950 */
+        --ui: 30 4% 16%;                  /* #282726 - Flexoki base-900 */
+        --ui-2: 30 3% 20%;                /* #343331 - Flexoki base-850 */
+        --ui-3: 30 3% 25%;                /* #403E3C - Flexoki base-800 */
+
+        /* Flexoki Accent Colors - Dark Mode */
+        --red: 4 71% 52%;                 /* #D14D41 */
+        --orange: 25 68% 51%;             /* #DA702C */
+        --yellow: 46 74% 45%;             /* #D0A215 */
+        --green: 75 44% 49%;              /* #879A39 */
+        --cyan: 178 46% 49%;              /* #3AA99F */
+        --blue: 206 48% 51%;              /* #4385BE */
+        --purple: 254 36% 65%;            /* #8B7EC8 */
+        --magenta: 324 41% 59%;           /* #CE5D97 */
+
         --radius: 0.5rem;
     }
 
     .light {
         /* Flexoki Light Mode */
-        --background: 40 100% 99%;        /* #FFFCF0 - Flexoki paper */
+        --background: 40 100% 97%;        /* #FFFCF0 - Flexoki paper */
         --foreground: 30 6% 6%;           /* #100F0F - Flexoki black */
 
         --muted: 40 13% 90%;              /* #E6E4D9 - Flexoki base-100 */
@@ -67,6 +87,26 @@
         --destructive-foreground: 40 100% 99%; /* #FFFCF0 - Flexoki paper */
 
         --ring: 40 13% 90%;               /* #E6E4D9 - Flexoki base-100 */
+
+        /* Flexoki Base Colors - Light Mode */
+        --tx: 30 6% 6%;                   /* #100F0F - Flexoki black */
+        --tx-2: 40 3% 43%;                /* #6F6E69 - Flexoki base-600 */
+        --tx-3: 40 10% 71%;               /* #B7B5AC - Flexoki base-300 */
+        --bg: 40 100% 97%;                /* #FFFCF0 - Flexoki paper */
+        --bg-2: 40 25% 95%;               /* #F2F0E5 - Flexoki base-50 */
+        --ui: 40 13% 90%;                 /* #E6E4D9 - Flexoki base-100 */
+        --ui-2: 40 11% 85%;               /* #DAD8CE - Flexoki base-150 */
+        --ui-3: 40 5% 81%;                /* #CECDC3 - Flexoki base-200 */
+
+        /* Flexoki Accent Colors - Light Mode */
+        --red: 8 74% 42%;                 /* #AF3029 */
+        --orange: 25 78% 42%;             /* #BC5215 */
+        --yellow: 46 83% 34%;             /* #AD8301 */
+        --green: 75 80% 26%;              /* #66800B */
+        --cyan: 178 56% 33%;              /* #24837B */
+        --blue: 206 68% 39%;              /* #205EA6 */
+        --purple: 254 43% 44%;            /* #5E409D */
+        --magenta: 324 58% 42%;           /* #A02F6F */
     }
 }
 
