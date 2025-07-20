@@ -21,8 +21,73 @@ module.exports = {
         chivo: ["var(--font-chivo)"],
       },
       colors: {
-        offwhite: "#EBEBEC",
-        gray: "#59595A",
+        // Flexoki Base Colors
+        tx: {
+          light: "#100F0F",  // black in light theme
+          dark: "#CECDC3",   // base-200 in dark theme
+        },
+        "tx-2": {
+          light: "#6F6E69",  // base-600 in light theme
+          dark: "#878580",   // base-500 in dark theme
+        },
+        "tx-3": {
+          light: "#B7B5AC",  // base-300 in light theme
+          dark: "#575653",   // base-700 in dark theme
+        },
+        bg: {
+          light: "#FFFCF0",  // paper in light theme
+          dark: "#100F0F",   // black in dark theme
+        },
+        "bg-2": {
+          light: "#F2F0E5",  // base-50 in light theme
+          dark: "#1C1B1A",   // base-950 in dark theme
+        },
+        ui: {
+          light: "#E6E4D9",  // base-100 in light theme
+          dark: "#282726",   // base-900 in dark theme
+        },
+        "ui-2": {
+          light: "#DAD8CE",  // base-150 in light theme
+          dark: "#343331",   // base-850 in dark theme
+        },
+        "ui-3": {
+          light: "#CECDC3",  // base-200 in light theme
+          dark: "#403E3C",   // base-800 in dark theme
+        },
+        // Flexoki Accent Colors
+        red: {
+          light: "#AF3029",
+          dark: "#D14D41",
+        },
+        orange: {
+          light: "#BC5215", 
+          dark: "#DA702C",
+        },
+        yellow: {
+          light: "#AD8301",
+          dark: "#D0A215", 
+        },
+        green: {
+          light: "#66800B",
+          dark: "#879A39",
+        },
+        cyan: {
+          light: "#24837B",
+          dark: "#3AA99F",
+        },
+        blue: {
+          light: "#205EA6",
+          dark: "#4385BE",
+        },
+        purple: {
+          light: "#5E409D",
+          dark: "#8B7EC8",
+        },
+        magenta: {
+          light: "#A02F6F", 
+          dark: "#CE5D97",
+        },
+        // shadcn/ui compatibility
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

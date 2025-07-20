@@ -8,7 +8,7 @@ export default function About() {
   )!;
 
   return (
-    <section className="p-2 pb-3 whitespace-normal font-satoshi font-normal text-offwhite leading-relaxed">
+    <section className="p-2 pb-3 whitespace-normal font-satoshi font-normal text-tx-dark leading-relaxed">
       <p className="mb-5">
         hey there stranger 👋, i’m a singapore based software engineer
         passionate about utilizing technology to its fullest by embracing
@@ -19,7 +19,7 @@ export default function About() {
         currently a{" "}
         <Link
           href={currentJob.placelink}
-          className="hover:underline hover:text-offwhite/90 transition duration-100 ease-linear"
+          className="hover:underline hover:text-tx-dark/90 transition duration-100 ease-linear"
         >
           {currentJob.title} at {currentJob.place}
         </Link>

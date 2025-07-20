@@ -30,12 +30,12 @@ export default function Home() {
   });
 
   return (
-    <div className="max-w-4xl px-10 grow text-offwhite">
+    <div className="max-w-4xl px-10 grow text-tx-dark">
       <Header />
       <Breadcrumb page="experiences" color="blue" />
       {sortedYears.map((year, i) => (
         <div key={i}>
-          <p className="pl-2 font-satoshi font-bold text-gray">{year}</p>
+          <p className="pl-2 font-satoshi font-bold text-tx-2-dark">{year}</p>
           <ul>
             {experiencesByYear[year].map((experience, j) => (
               <Experience key={j} {...experience} />
