@@ -15,7 +15,7 @@ export default function Breadcrumb(props: BreadcrumbProps) {
     <p className="pl-2 mb-4 font-satoshi font-bold">
       <Link
         href="/"
-        className="hover:text-tx/90 transition-colors duration-75 ease-in-out"
+        className="hover:text-cyan transition-colors duration-75 ease-in-out"
       >
         home
       </Link>
