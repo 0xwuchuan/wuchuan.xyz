@@ -62,8 +62,21 @@ export default function MusicPlayer() {
   // Load new track when index changes
   useEffect(() => {
     if (!audioRef.current) return;
-    audioRef.current.load();
-  }, [currentTrackIndex]);
+    const audio = audioRef.current;
+
+    audio.load();
+
+    // If we should be playing, wait for the track to load then play
+    if (isPlaying) {
+      const playWhenReady = () => {
+        audio.play().catch((err) => {
+          console.error("Playback failed:", err);
+        });
+      };
+      audio.addEventListener('canplay', playWhenReady, { once: true });
+      return () => audio.removeEventListener('canplay', playWhenReady);
+    }
+  }, [currentTrackIndex, isPlaying]);
 
   // Play/pause without reloading the track
   useEffect(() => {
