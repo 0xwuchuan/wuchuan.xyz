@@ -3,7 +3,7 @@ import Header from "@/components/header";
 import Breadcrumb from "@/components/breadcrumb";
 import { ProjectProps, Project } from "@components/project";
 
-import projects from "@/public/projects.json";
+import projects from "@/data/projects.json";
 
 export const metadata: Metadata = {
   title: "projects",

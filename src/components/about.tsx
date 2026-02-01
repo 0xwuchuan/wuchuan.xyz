@@ -1,5 +1,5 @@
 import { ExperienceProps } from "@/components/experience";
-import experiences from "@/public/experiences.json";
+import experiences from "@/data/experiences.json";
 import Link from "next/link";
 
 export default function About() {

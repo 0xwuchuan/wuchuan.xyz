@@ -3,7 +3,7 @@ import { ExperienceProps, Experience } from "@/components/experience";
 import Header from "@/components/header";
 import Breadcrumb from "@/components/breadcrumb";
 
-import experiences from "@/public/experiences.json";
+import experiences from "@/data/experiences.json";
 
 export const metadata: Metadata = {
   title: "experiences",
