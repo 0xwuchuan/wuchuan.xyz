@@ -9,7 +9,7 @@ export default function Home() {
       <Header />
       <About />
       <Cards />
-      <Footer />
+      <Footer showMusicPlayer={true} />
     </div>
   );
 }
