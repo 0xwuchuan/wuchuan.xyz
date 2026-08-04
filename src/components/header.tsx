@@ -24,7 +24,7 @@ export default function Header({ activePage }: HeaderProps) {
     <header className="px-2 pt-12 pb-9 sm:pt-24">
       <Link
         href="/"
-        className="font-chivo text-[20px] font-bold leading-[26px] tracking-tight text-tx"
+        className="font-satoshi text-[20px] font-black leading-[26px] tracking-tight text-tx"
         aria-label="0xwuchuan home"
       >
         <span className="text-tx-2">0x</span>wuchuan

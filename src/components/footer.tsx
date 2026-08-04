@@ -7,7 +7,7 @@ interface FooterProps {
 
 export default function Footer({ showMusicPlayer = false }: FooterProps) {
   return (
-    <footer className="py-2 px-6 my-3 font-satoshi">
+    <footer className="my-3 px-2 py-2 font-inter">
       <div
         className={`${
           showMusicPlayer ? "flex flex-row justify-between" : "flex flex-col"

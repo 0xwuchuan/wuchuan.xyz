@@ -1,10 +1,9 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Chivo, Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import localfont from "next/font/local";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const chivo = Chivo({ subsets: ["latin"], variable: "--font-chivo" });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const satoshi = localfont({
   src: "./fonts/Satoshi-Variable.ttf",
@@ -32,7 +31,6 @@ export default function RootLayout({
       {/* Standard layout: Center children vertically in one column */}
       <body
         className={`flex flex-col items-center min-h-screen overflow-x-hidden
-          ${chivo.variable}
           ${satoshi.variable}
           ${inter.variable}`}
       >
