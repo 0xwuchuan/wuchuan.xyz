@@ -10,7 +10,7 @@ export type ExperienceProps = {
 
 export function Experience(props: ExperienceProps) {
   return (
-    <li className="p-2 pb-4 font-inter text-[19px] lowercase leading-[26.6px]">
+    <li className="p-2 pb-4 font-inter text-[19px] font-light lowercase leading-[26.6px]">
       <Link
         href={props.placelink}
         className="font-bold transition-colors duration-100 ease-out hover:text-blue"
