@@ -1,11 +1,51 @@
-export default function Header() {
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+
+type Page = "about" | "work" | "projects" | "garden";
+
+type HeaderProps = {
+  activePage: Page;
+};
+
+const navigation = [
+  { label: "about", href: "/", page: "about", color: "text-cyan" },
+  { label: "work", href: "/experiences", page: "work", color: "text-blue" },
+  { label: "projects", href: "/projects", page: "projects", color: "text-red" },
+  {
+    label: "digital garden",
+    href: "/garden",
+    page: "garden",
+    color: "text-green",
+  },
+] as const;
+
+export default function Header({ activePage }: HeaderProps) {
   return (
-    <header className="flex flex-row justify-between pt-12 sm:pt-36 pb-5 px-2 text-tx">
-      <div className="mt-7">
-        <span className="text-3xl font-bold font-chivo">
-          <a className="text-tx-2">0x</a>wuchuan
-        </span>
-      </div>
+    <header className="px-2 pt-12 pb-8 sm:pt-24">
+      <Link
+        href="/"
+        className="font-chivo text-3xl font-bold tracking-tight text-tx"
+        aria-label="0xwuchuan home"
+      >
+        <span className="text-tx-2">0x</span>wuchuan
+      </Link>
+      <nav aria-label="Primary" className="mt-5 flex items-center gap-1.5 font-satoshi text-sm font-medium sm:gap-2.5 sm:text-base">
+        {navigation.map((item, index) => (
+          <div key={item.page} className="flex items-center gap-1.5 sm:gap-2.5">
+            {index > 0 && <span className="text-tx-3">/</span>}
+            <Link
+              href={item.href}
+              aria-current={activePage === item.page ? "page" : undefined}
+              className={cn(
+                "transition-colors duration-100 ease-out hover:text-cyan",
+                activePage === item.page ? item.color : "text-tx-2",
+              )}
+            >
+              {item.label}
+            </Link>
+          </div>
+        ))}
+      </nav>
     </header>
   );
 }

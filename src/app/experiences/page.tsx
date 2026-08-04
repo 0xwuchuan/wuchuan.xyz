@@ -1,47 +1,40 @@
 import { Metadata } from "next";
 import { ExperienceProps, Experience } from "@/components/experience";
 import Header from "@/components/header";
-import Breadcrumb from "@/components/breadcrumb";
 
 import experiences from "@/data/experiences.json";
 
 export const metadata: Metadata = {
-  title: "experiences",
+  title: "work",
 };
 
-export default function Home() {
+export default function Work() {
   const experiencesByYear: Record<string, ExperienceProps[]> = {};
 
   experiences.forEach((experience) => {
-    const year: string =
+    const year =
       experience.year === "current"
         ? new Date().getFullYear().toString()
         : experience.year;
-    if (!experiencesByYear[year]) {
-      experiencesByYear[year] = [];
-    }
-    experiencesByYear[year].push(experience);
+    (experiencesByYear[year] ??= []).push(experience);
   });
 
-  // Sort experiences by year in descending order (except for 'current' year)
-  const sortedYears = Object.keys(experiencesByYear).sort((a, b) => {
-    if (a === "current") return -1; // 'current' year comes first
-    return parseInt(b) - parseInt(a); // Sort other years in descending order
-  });
+  const sortedYears = Object.keys(experiencesByYear).sort(
+    (a, b) => parseInt(b) - parseInt(a),
+  );
 
   return (
-    <div className="max-w-4xl px-10 grow text-tx">
-      <Header />
-      <Breadcrumb page="experiences" color="blue" />
-      {sortedYears.map((year, i) => (
-        <div key={i}>
+    <div className="w-full max-w-4xl px-6 text-tx sm:px-10">
+      <Header activePage="work" />
+      {sortedYears.map((year) => (
+        <section key={year}>
           <p className="pl-2 font-satoshi font-bold text-tx-2">{year}</p>
           <ul>
-            {experiencesByYear[year].map((experience, j) => (
-              <Experience key={j} {...experience} />
+            {experiencesByYear[year].map((experience) => (
+              <Experience key={`${experience.title}-${experience.place}`} {...experience} />
             ))}
           </ul>
-        </div>
+        </section>
       ))}
     </div>
   );

@@ -1,14 +1,12 @@
 import Header from "@/components/header";
 import About from "@/components/about";
-import Cards from "@/components/cards";
 import Footer from "@/components/footer";
 
 export default function Home() {
   return (
-    <div className="max-w-4xl px-10 grow text-tx">
-      <Header />
+    <div className="w-full max-w-4xl px-6 text-tx sm:px-10">
+      <Header activePage="about" />
       <About />
-      <Cards />
       <Footer showMusicPlayer={true} />
     </div>
   );

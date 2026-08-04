@@ -10,18 +10,13 @@ export type ExperienceProps = {
 
 export function Experience(props: ExperienceProps) {
   return (
-    <section className="p-2 pb-5 whitespace-normal font-satoshi leading-relaxed lowercase">
+    <li className="p-2 pb-4 font-satoshi lowercase leading-relaxed">
       <Link
         href={props.placelink}
-        className="hover:underline hover:text-blue transition duration-100 ease-in"
+        className="font-bold transition-colors duration-100 ease-out hover:text-blue"
       >
-        <p className="mb-2 font-bold">
-          {props.title} at {props.place}
-        </p>
+        {props.title} at {props.place}
       </Link>
-      <ul className="space-y-2 font-light text-tx/90">
-        <li>{props.description}</li>
-      </ul>
-    </section>
+    </li>
   );
 }
