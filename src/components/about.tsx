@@ -8,7 +8,7 @@ export default function About() {
   )!;
 
   return (
-    <section className="p-2 pb-3 whitespace-normal font-satoshi font-normal text-tx leading-relaxed">
+    <section className="p-2 pb-3 whitespace-normal font-satoshi text-[19px] font-normal leading-[26.6px] text-tx">
       <p className="mb-5">
         hey there stranger 👋, i’m a singapore based software engineer
         passionate about utilizing technology to its fullest by embracing

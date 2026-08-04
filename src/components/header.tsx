@@ -21,15 +21,15 @@ const navigation = [
 
 export default function Header({ activePage }: HeaderProps) {
   return (
-    <header className="px-2 pt-12 pb-8 sm:pt-24">
+    <header className="px-2 pt-12 pb-9 sm:pt-24">
       <Link
         href="/"
-        className="font-chivo text-3xl font-bold tracking-tight text-tx"
+        className="font-chivo text-[20px] font-bold leading-[26px] tracking-tight text-tx"
         aria-label="0xwuchuan home"
       >
         <span className="text-tx-2">0x</span>wuchuan
       </Link>
-      <nav aria-label="Primary" className="mt-5 flex items-center gap-1.5 font-satoshi text-sm font-medium sm:gap-2.5 sm:text-base">
+      <nav aria-label="Primary" className="mt-4 flex items-center gap-1.5 font-satoshi text-base font-medium sm:gap-2.5">
         {navigation.map((item, index) => (
           <div key={item.page} className="flex items-center gap-1.5 sm:gap-2.5">
             {index > 0 && <span className="text-tx-3">/</span>}
