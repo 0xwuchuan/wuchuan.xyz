@@ -1,5 +1,7 @@
 Commit your changes after your changes using conventional commits.
 
+Maintain parity with the Design on Paper as much as possible.
+
 ## Development Commands
 
 - `yarn dev` - Start development server on http://localhost:3000
