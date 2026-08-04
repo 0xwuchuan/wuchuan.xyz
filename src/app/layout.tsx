@@ -1,10 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import localfont from "next/font/local";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const satoshi = localfont({
   src: "./fonts/Satoshi-Variable.ttf",
   variable: "--font-satoshi",
@@ -30,9 +28,7 @@ export default function RootLayout({
     <html lang="en">
       {/* Standard layout: Center children vertically in one column */}
       <body
-        className={`flex flex-col items-center min-h-screen overflow-x-hidden
-          ${satoshi.variable}
-          ${inter.variable}`}
+        className={`flex flex-col items-center min-h-screen overflow-x-hidden ${satoshi.variable}`}
       >
         <ThemeProvider defaultTheme="dark">
           {children}

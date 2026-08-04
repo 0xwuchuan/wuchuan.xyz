@@ -17,8 +17,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        inter: ["var(--font-inter)"],
-        satoshi: ["var(--font-satoshi)"],
+        satoshi: ["var(--font-satoshi)", "sans-serif"],
       },
       colors: {
         // Flexoki Base Colors using CSS custom properties
