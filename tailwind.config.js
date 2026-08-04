@@ -17,6 +17,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
+        chivo: ["var(--font-chivo)", "sans-serif"],
+        "open-sans": ["var(--font-open-sans)", "sans-serif"],
         satoshi: ["var(--font-satoshi)", "sans-serif"],
       },
       colors: {

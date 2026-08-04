@@ -25,10 +25,10 @@ export default function Work() {
 
   return (
     <div className="w-full max-w-4xl px-6 text-tx sm:px-10">
-      <Header activePage="work" />
+      <Header activePage="work" spacing="roomy" />
       {sortedYears.map((year) => (
         <section key={year}>
-          <p className="pl-2 font-satoshi font-bold text-tx-2">{year}</p>
+          <p className="pl-2 font-satoshi text-base font-bold leading-6 text-tx-2">{year}</p>
           <ul>
             {experiencesByYear[year].map((experience) => (
               <Experience key={`${experience.title}-${experience.place}`} {...experience} />

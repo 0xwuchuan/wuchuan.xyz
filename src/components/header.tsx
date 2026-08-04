@@ -5,6 +5,7 @@ type Page = "about" | "work" | "projects" | "garden";
 
 type HeaderProps = {
   activePage: Page;
+  spacing?: "default" | "roomy";
 };
 
 const navigation = [
@@ -19,19 +20,19 @@ const navigation = [
   },
 ] as const;
 
-export default function Header({ activePage }: HeaderProps) {
+export default function Header({ activePage, spacing = "default" }: HeaderProps) {
   return (
-    <header className="px-2 pt-12 pb-9 sm:pt-24">
+    <header className={cn("px-2 pt-12 sm:pt-24", spacing === "roomy" ? "pb-10" : "pb-0")}>
       <Link
         href="/"
-        className="font-satoshi text-[19px] font-black leading-[26px] tracking-tight text-tx"
+        className="font-chivo text-[32px] font-bold leading-[36px] tracking-[-0.04em] text-tx"
         aria-label="0xwuchuan home"
       >
-        <span className="text-tx-2">0x</span>wuchuan
+        0xwuchuan
       </Link>
-      <nav aria-label="Primary" className="mt-4 flex items-center gap-1.5 font-satoshi text-base font-medium sm:gap-2.5">
+      <nav aria-label="Primary" className="mt-5 flex items-center gap-2.5 font-satoshi text-base font-medium">
         {navigation.map((item, index) => (
-          <div key={item.page} className="flex items-center gap-1.5 sm:gap-2.5">
+          <div key={item.page} className="flex items-center gap-2.5">
             {index > 0 && <span className="text-tx-3">/</span>}
             <Link
               href={item.href}

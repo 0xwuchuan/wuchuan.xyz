@@ -10,13 +10,14 @@ export type ProjectProps = {
 
 export function Project(props: ProjectProps) {
   return (
-    <section className="p-2 pb-4 font-satoshi text-[19px] font-light lowercase leading-[26.6px]">
+    <section className="px-2 pt-2 pb-5 font-satoshi text-base lowercase leading-[26px]">
       <Link
         href={props.link}
-        className="font-bold transition-colors duration-100 ease-out hover:text-red"
+        className="mb-2 block font-bold text-tx transition-colors duration-100 ease-out hover:text-red"
       >
         {props.name}
       </Link>
+      <p className="font-light text-tx/90">{props.description}</p>
     </section>
   );
 }

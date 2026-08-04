@@ -7,7 +7,7 @@ export default function Home() {
     <div className="w-full max-w-4xl px-6 text-tx sm:px-10">
       <Header activePage="about" />
       <About />
-      <Footer showMusicPlayer={true} />
+      <Footer />
     </div>
   );
 }

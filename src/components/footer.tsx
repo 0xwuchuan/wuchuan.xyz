@@ -1,19 +1,8 @@
 import Link from "next/link";
-import MusicPlayer from "@/components/music-player";
-
-interface FooterProps {
-  showMusicPlayer?: boolean;
-}
-
-export default function Footer({ showMusicPlayer = false }: FooterProps) {
+export default function Footer() {
   return (
     <footer className="my-3 px-2 py-2 font-satoshi">
-      <div
-        className={`${
-          showMusicPlayer ? "flex flex-row justify-between" : "flex flex-col"
-        } items-start`}
-      >
-        {/* Left side - existing links */}
+      <div className="flex flex-col items-start">
         <div className="flex flex-col gap-0">
           <div className="flex flex-row gap-4 text-tx-2 mb-2">
             <Link
@@ -53,9 +42,6 @@ export default function Footer({ showMusicPlayer = false }: FooterProps) {
             </Link>
           </p>
         </div>
-
-        {/* Right side - music player */}
-        {showMusicPlayer && <MusicPlayer />}
       </div>
     </footer>
   );
