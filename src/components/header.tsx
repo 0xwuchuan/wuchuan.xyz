@@ -5,7 +5,6 @@ type Page = "about" | "work" | "projects" | "garden";
 
 type HeaderProps = {
   activePage: Page;
-  spacing?: "default" | "roomy";
 };
 
 const navigation = [
@@ -20,9 +19,9 @@ const navigation = [
   },
 ] as const;
 
-export default function Header({ activePage, spacing = "default" }: HeaderProps) {
+export default function Header({ activePage }: HeaderProps) {
   return (
-    <header className={cn("px-2 pt-12 sm:pt-24", spacing === "roomy" ? "pb-10" : "pb-0")}>
+    <header className="px-2 pt-12 pb-8 sm:pt-24">
       <Link
         href="/"
         className="font-chivo text-[32px] font-bold leading-[36px] tracking-[-0.04em] text-tx"
