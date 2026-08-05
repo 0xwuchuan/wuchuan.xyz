@@ -8,14 +8,33 @@ type HeaderProps = {
 };
 
 const navigation = [
-  { label: "about", href: "/", page: "about", color: "text-cyan" },
-  { label: "work", href: "/experiences", page: "work", color: "text-blue" },
-  { label: "projects", href: "/projects", page: "projects", color: "text-red" },
+  {
+    label: "about",
+    href: "/",
+    page: "about",
+    color: "text-cyan",
+    hoverColor: "hover:text-cyan",
+  },
+  {
+    label: "work",
+    href: "/experiences",
+    page: "work",
+    color: "text-blue",
+    hoverColor: "hover:text-blue",
+  },
+  {
+    label: "projects",
+    href: "/projects",
+    page: "projects",
+    color: "text-red",
+    hoverColor: "hover:text-red",
+  },
   {
     label: "digital garden",
     href: "/garden",
     page: "garden",
     color: "text-green",
+    hoverColor: "hover:text-green",
   },
 ] as const;
 
@@ -37,8 +56,8 @@ export default function Header({ activePage }: HeaderProps) {
               href={item.href}
               aria-current={activePage === item.page ? "page" : undefined}
               className={cn(
-                "transition-colors duration-100 ease-out hover:text-cyan",
-                activePage === item.page ? item.color : "text-tx-2",
+                "transition-colors duration-100 ease-out",
+                activePage === item.page ? item.color : cn("text-tx-2", item.hoverColor),
               )}
             >
               {item.label}
