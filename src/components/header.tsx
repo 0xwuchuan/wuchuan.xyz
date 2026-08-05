@@ -40,7 +40,7 @@ const navigation = [
 
 export default function Header({ activePage }: HeaderProps) {
   return (
-    <header className="px-2 pt-12 pb-8 sm:pt-24">
+    <header className="flex flex-wrap items-center justify-between gap-x-6 gap-y-5 px-2 pt-12 pb-8 sm:pt-24">
       <Link
         href="/"
         className="font-chivo text-[32px] font-bold leading-[36px] tracking-[-0.04em] text-tx"
@@ -48,7 +48,7 @@ export default function Header({ activePage }: HeaderProps) {
       >
         0xwuchuan
       </Link>
-      <nav aria-label="Primary" className="mt-5 flex items-center gap-2.5 font-satoshi text-base font-medium">
+      <nav aria-label="Primary" className="flex items-center gap-2.5 font-satoshi text-base font-medium">
         {navigation.map((item, index) => (
           <div key={item.page} className="flex items-center gap-2.5">
             {index > 0 && <span className="text-tx-3">/</span>}
