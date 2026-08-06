@@ -17,7 +17,7 @@ const doodleSizes = {
   smiley: "-top-[18px] h-3.5 w-[18px] sm:-top-5 sm:h-4 sm:w-5",
   suitcase: "-top-[18px] h-3.5 w-[18px] sm:-top-5 sm:h-4 sm:w-[21px]",
   "puzzle-piece": "-top-5 h-4 w-[15px] sm:-top-[22px] sm:h-[18px] sm:w-[17px]",
-  clover: "-top-5 size-4 sm:-top-[22px] sm:size-[18px]",
+  clover: "-top-5 h-4 w-4 sm:-top-[22px] sm:h-[18px] sm:w-[18px]",
 };
 
 export default function Header({ activePage }: HeaderProps) {
