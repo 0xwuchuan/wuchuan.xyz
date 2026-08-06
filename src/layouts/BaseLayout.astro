@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from "astro:transitions";
 import themeScript from "../scripts/theme.js?url";
 import "../styles/global.css";
 
@@ -38,6 +39,7 @@ const socialImage = new URL("/og.png", Astro.site);
     <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
     <link rel="canonical" href={canonical} />
     <link rel="alternate" type="application/rss+xml" title="wuchuan's digital garden" href={new URL("/rss.xml", Astro.site)} />
+    <link rel="preload" href="/fonts/Satoshi-Variable-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta property="og:type" content={ogType} />
@@ -56,6 +58,7 @@ const socialImage = new URL("/og.png", Astro.site);
     {publishedDate && <meta property="article:published_time" content={publishedDate.toISOString()} />}
     {updatedDate && <meta property="article:modified_time" content={updatedDate.toISOString()} />}
     <title>{pageTitle}</title>
+    <ClientRouter fallback="swap" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">skip to content</a>

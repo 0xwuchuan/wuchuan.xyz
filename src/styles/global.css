@@ -55,8 +55,15 @@
 
 html {
   min-width: 320px;
+  scrollbar-gutter: stable;
   background: var(--bg);
   scroll-behavior: smooth;
+}
+
+::view-transition-group(root),
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
 }
 
 body {
@@ -213,6 +220,13 @@ button:focus-visible {
   left: 50%;
   z-index: 1;
   transform: translateX(-50%);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.nav-link.active .nav-doodle {
+  visibility: visible;
+  opacity: 1;
 }
 
 .nav-smiley { top: -20px; width: 20px; height: 16px; }

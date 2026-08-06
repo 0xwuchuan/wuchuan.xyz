@@ -16,7 +16,7 @@ const navigation = [
 ] as const;
 ---
 
-<header class="site-header">
+<header class="site-header" transition:persist="site-header">
   <a href="/" class="wordmark" aria-label="0xwuchuan home">
     <span>0x</span>wuchuan
   </a>
@@ -29,10 +29,11 @@ const navigation = [
             {index > 0 && <span class="nav-divider" aria-hidden="true">/</span>}
             <a
               href={item.href}
+              data-nav-page={item.page}
               aria-current={active ? "page" : undefined}
               class:list={["nav-link", `nav-${item.color}`, { active }]}
             >
-              {active && <Doodle name={item.doodle} class={`nav-doodle ${item.doodleClass}`} />}
+              <Doodle name={item.doodle} class={`nav-doodle ${item.doodleClass}`} />
               {item.label}
             </a>
           </span>
