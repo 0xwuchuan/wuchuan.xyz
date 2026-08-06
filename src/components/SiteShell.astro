@@ -1,0 +1,14 @@
+---
+import Header, { type Page } from "./Header.astro";
+
+interface Props {
+  activePage?: Page;
+}
+
+const { activePage } = Astro.props;
+---
+
+<div class="site-shell">
+  <Header activePage={activePage} />
+  <slot />
+</div>

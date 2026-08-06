@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import NoteList from "../../components/NoteList.astro";
+import SiteShell from "../../components/SiteShell.astro";
+import { getPublishedPosts } from "../../lib/blog";
+
+const posts = await getPublishedPosts();
+---
+
+<BaseLayout title="digital garden" description="A digital garden of evolving notes about technology, work, decisions, and life.">
+  <SiteShell activePage="blog">
+    <main id="main-content" class="garden-page">
+      <div class="garden-intro page-pad">
+        <p>
+          i have made a few attempts at starting and maintaining a blog but none of them stuck for long enough to make it a habit. the main reason being that i have never even written a complete blog post. i fear that my writing is factually incorrect. i fear that the post isn't written well enough. i fear that people are going to judge me because of the above.
+        </p>
+        <p>
+          graham weaver's lecture on <a href="https://www.youtube.com/watch?v=dZ3YCGCkzHk">“how to win without crushing your soul”</a> has motivated me to try again. this time, instead of a blog i will try to maintain a digital garden. there are already a lot of articles out there explaining what a digital garden is. the difference between a digital garden and a blog is that the notes do not need to be perfect. they are meant to be iterated on. notes start as seeds and blossom into full grown plants and trees (well written posts i hope) when given enough love, care, and attention.
+        </p>
+        <p>
+          digital gardening starts with the concept of evergreen notes. to be completely honest i don't really understand evergreen notes fully but my objective is to experiment with evergreen notes myself and come to my own conclusion and my own approach to writing notes
+        </p>
+      </div>
+      <div class="latest-notes">
+        <NoteList posts={posts.slice(0, 3)} title="latest notes" showAllLink showYear />
+      </div>
+    </main>
+  </SiteShell>
+</BaseLayout>

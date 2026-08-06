@@ -1,34 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# wuchuan.xyz
 
-## Getting Started
+Personal portfolio and digital garden built with Astro, Tailwind CSS, and the Flexoki color system. The site is statically generated and deployed as Cloudflare Workers Static Assets with no Worker script.
 
-First, run the development server:
+## Development
 
 ```bash
-npm run dev
-# or
+yarn install
 yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The local site is available at `http://localhost:4321`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Validation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+yarn run check
+yarn build
+yarn preview
+```
 
-## Learn More
+## Content
 
-To learn more about Next.js, take a look at the following resources:
+Blog entries live in `src/content/blog`. Each Markdown file must satisfy the schema in `src/content.config.ts`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```yaml
+title: Note title
+description: Search and feed summary
+publishedDate: 2026-07-19
+updatedDate: 2026-07-19
+draft: false
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Draft entries are excluded from blog pages, generated note routes, RSS, and the sitemap.
 
-## Deploy on Vercel
+## Cloudflare Workers Builds
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Connect this GitHub repository to a Worker and use:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Production branch: `main`
+- Build command: `yarn build`
+- Deploy command: `yarn deploy`
+- Non-production deploy command: `yarn wrangler versions upload`
+
+`wrangler.jsonc` configures `./dist` as the static asset directory, clean no-trailing-slash routes, custom 404 handling, and the apex custom domain. Security and cache policy are defined in `public/_headers`.
+
+Cloudflare dashboard work that is not represented in this repository: connect Workers Builds to GitHub; add a proxied `www` DNS record and a permanent zone redirect from `www.wuchuan.xyz/*` to `https://wuchuan.xyz/${1}`; remove the old `blog.wuchuan.xyz` DNS record; and enable Web Analytics.

@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SiteShell from "../components/SiteShell.astro";
+import experiences from "../data/experiences.json";
+
+const currentYear = String(new Date().getUTCFullYear());
+const grouped = Object.groupBy(experiences, (experience) =>
+  experience.year === "current" ? currentYear : experience.year,
+);
+const years = Object.keys(grouped).sort((a, b) => Number(b) - Number(a));
+---
+
+<BaseLayout title="work" description="Work experience across smart-contract security, backend engineering, teaching, and blockchain engineering.">
+  <SiteShell activePage="work">
+    <main id="main-content" class="work-page page-pad">
+      {
+        years.map((year) => (
+          <section class="year-section">
+            <h1>{year}</h1>
+            <ul>
+              {grouped[year]?.map((experience) => (
+                <li class="entry">
+                  <a class="entry-title work-link" href={experience.placelink}>
+                    {experience.title} at {experience.place}
+                  </a>
+                  <p>{experience.description}</p>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))
+      }
+    </main>
+  </SiteShell>
+</BaseLayout>

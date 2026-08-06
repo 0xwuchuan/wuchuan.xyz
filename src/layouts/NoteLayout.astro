@@ -1,0 +1,38 @@
+---
+import type { BlogEntry } from "../lib/blog";
+import { formatLongDate } from "../lib/blog";
+import BaseLayout from "./BaseLayout.astro";
+import SiteShell from "../components/SiteShell.astro";
+
+interface Props {
+  entry: BlogEntry;
+}
+
+const { entry } = Astro.props;
+const { title, description, publishedDate, updatedDate } = entry.data;
+const showUpdated = updatedDate && updatedDate.valueOf() !== publishedDate.valueOf();
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalPath={`/blog/${entry.id}`}
+  ogType="article"
+  publishedDate={publishedDate}
+  updatedDate={updatedDate}
+>
+  <SiteShell activePage="blog">
+    <main id="main-content" class="note-page page-pad">
+      <header class="note-header">
+        <h1>{title}</h1>
+        <p class="note-date">
+          published · <time datetime={publishedDate.toISOString()}>{formatLongDate(publishedDate)}</time>
+          {showUpdated && <span> · updated · <time datetime={updatedDate.toISOString()}>{formatLongDate(updatedDate)}</time></span>}
+        </p>
+      </header>
+      <article class="note-body">
+        <slot />
+      </article>
+    </main>
+  </SiteShell>
+</BaseLayout>

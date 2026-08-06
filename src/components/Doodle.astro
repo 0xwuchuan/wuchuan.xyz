@@ -1,0 +1,17 @@
+---
+interface Props {
+  name: "smiley" | "suitcase" | "puzzle-piece" | "clover" | "basketball" | "climbing-holds" | "running";
+  class?: string;
+  label?: string;
+}
+
+const { name, class: className, label } = Astro.props;
+---
+
+<span
+  class:list={["doodle", className]}
+  style={`--doodle-image: url('/doodles/${name}.svg')`}
+  aria-hidden={label ? undefined : "true"}
+  aria-label={label}
+  role={label ? "img" : undefined}
+></span>

@@ -1,0 +1,38 @@
+---
+import type { BlogEntry } from "../lib/blog";
+import { formatShortDate } from "../lib/blog";
+
+interface Props {
+  posts: BlogEntry[];
+  title?: string;
+  showAllLink?: boolean;
+  showYear?: boolean;
+}
+
+const { posts, title, showAllLink = false, showYear = false } = Astro.props;
+---
+
+<section class="note-list page-pad">
+  {
+    (title || showAllLink) && (
+      <div class="note-list-heading">
+        {title && <h2>{title}</h2>}
+        {showAllLink && <a href="/blog/all">view all notes &gt;</a>}
+      </div>
+    )
+  }
+  <ul>
+    {
+      posts.map((post) => (
+        <li>
+          <a href={`/blog/${post.id}`}>
+            <time datetime={post.data.publishedDate.toISOString()}>
+              {formatShortDate(post.data.publishedDate, showYear)}
+            </time>
+            <span>{post.data.title}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>

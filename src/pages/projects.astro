@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SiteShell from "../components/SiteShell.astro";
+import projects from "../data/projects.json";
+
+const sortedProjects = [...projects].sort((a, b) => a.order - b.order);
+---
+
+<BaseLayout title="projects" description="Selected software, web, and onchain projects by 0xwuchuan.">
+  <SiteShell activePage="projects">
+    <main id="main-content" class="projects-page page-pad">
+      {
+        sortedProjects.map((project) => (
+          <article class="entry">
+            <h1><a class="entry-title project-link" href={project.link}>{project.name}</a></h1>
+            <p>{project.description}</p>
+          </article>
+        ))
+      }
+    </main>
+  </SiteShell>
+</BaseLayout>

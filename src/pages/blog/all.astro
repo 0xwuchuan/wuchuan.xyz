@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import NoteList from "../../components/NoteList.astro";
+import SiteShell from "../../components/SiteShell.astro";
+import { getPublishedPosts } from "../../lib/blog";
+
+const posts = await getPublishedPosts();
+const grouped = Object.groupBy(posts, (post) => String(post.data.publishedDate.getUTCFullYear()));
+const years = Object.keys(grouped).sort((a, b) => Number(b) - Number(a));
+---
+
+<BaseLayout title="all notes" description="All published notes from 0xwuchuan's digital garden, grouped chronologically.">
+  <SiteShell activePage="blog">
+    <main id="main-content" class="all-notes-page">
+      <h1 class="visually-hidden">all notes</h1>
+      {
+        years.map((year) => (
+          <div class="all-notes-year">
+            <NoteList posts={grouped[year] ?? []} title={year} />
+          </div>
+        ))
+      }
+    </main>
+  </SiteShell>
+</BaseLayout>

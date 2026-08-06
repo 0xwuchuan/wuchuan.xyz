@@ -1,59 +1,46 @@
-Commit your changes after your changes using conventional commits.
+Commit completed changes with conventional commit messages.
 
-Maintain parity with the Design on Paper as much as possible.
+Maintain parity with the Paper artboards. Desktop typography, spacing, hierarchy, and Flexoki tokens come from Paper; derive mobile behavior responsively.
 
-## Development Commands
+## Development commands
 
-- `yarn dev` - Start development server on http://localhost:3000
-- `yarn build` - Build production application
-- `yarn start` - Start production server
-- `yarn lint` - Run ESLint checks
+- `yarn dev` — start Astro locally
+- `yarn run check` — validate content and type-check Astro files
+- `yarn build` — generate the production static site
+- `yarn preview` — preview the built site
 
-## Project Architecture
+## Architecture
 
-This is a personal portfolio website built with:
+- Astro with static output
+- Tailwind CSS through the Vite plugin
+- No React or hydrated framework components
+- Typed Markdown content collection in `src/content/blog`
+- Cloudflare Workers Static Assets with no Worker script
+- Dark theme by default; the persisted manual light theme is toggled with `d`
+- Local subsetted Satoshi variable font
 
-- **Framework**: Next.js 13.4 with App Router
-- **Styling**: Tailwind CSS with Flexoki color scheme
-- **UI Components**: shadcn/ui components library
-- **Typography**: Custom Satoshi font + Chivo and Inter from Google Fonts
-- **Theme System**: Dark/Light mode switching with 'd' key
-- **Data**: JSON files for projects (`src/public/projects.json`) and experiences (`src/public/experiences.json`)
+## Routes
 
-### Key Structure
+- `/`
+- `/work`
+- `/projects`
+- `/blog`
+- `/blog/all`
+- `/blog/[slug]`
+- `/rss.xml`
+- `/404`
 
-- **Pages**: App Router with pages in `src/app/` (home, experiences, projects)
-- **Components**: Reusable UI components in `src/components/` including ThemeProvider and Footer
-- **Styling**: Flexoki color system with theme-adaptive CSS custom properties
-- **Fonts**: Local Satoshi font + Google Fonts configured in layout
-- **Redirects**: `/blog` redirects to external blog at `https://blog.wuchuan.xyz`
+Obsolete routes such as `/experiences` and `/garden` intentionally return the custom 404 page.
 
-### Design System
+## Data and content
 
-- **Color Scheme**: Flexoki color palette (https://stephango.com/flexoki)
-- **Theme Switching**: Press 'd' to toggle between dark (default) and light modes
-- **Base Colors**: `tx`, `tx-2`, `tx-3` (text), `bg`, `bg-2` (backgrounds), `ui`, `ui-2`, `ui-3` (interface)
-- **Accent Colors**: `red`, `orange`, `yellow`, `green`, `cyan`, `blue`, `purple`, `magenta`
-- **Font hierarchy**: Satoshi (primary), Chivo (headings), Inter (fallback)
-- **Interactions**: Cyan hover effects on links and interactive elements
-- **Mobile-responsive** with custom breakpoints
+- Work entries: `src/data/experiences.json`
+- Projects: `src/data/projects.json`
+- Blog schema: `src/content.config.ts`
+- Blog Markdown: `src/content/blog`
 
-### Path Aliases
+Draft blog entries must remain excluded from rendered pages, RSS, and the sitemap.
 
-- `@/*` maps to `src/*`
-- `@components/*` maps to `src/components/*`
-- `@public/*` maps to `public/*`
+## Deployment
 
-### Data Management
-
-Projects and experiences are stored in JSON files and imported into components. Update these files to modify displayed content.
-
-## Browser Automation
-
-Use `agent-browser` for web automation. Run `agent-browser --help` for all commands.
-
-Core workflow:
-1. `agent-browser open <url>` - Navigate to page
-2. `agent-browser snapshot -i` - Get interactive elements with refs (@e1, @e2)
-3. `agent-browser click @e1` / `fill @e2 "text"` - Interact using refs
-4. Re-snapshot after page changes
+`wrangler.jsonc` is the source of truth for the Workers Static Assets deployment. Security and cache headers live in `public/_headers`. The www-to-apex redirect is a Cloudflare zone redirect rule because Static Assets `_redirects` rules only accept relative source paths.

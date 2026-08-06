@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SiteShell from "../components/SiteShell.astro";
+---
+
+<BaseLayout title="not found" description="The page you were looking for does not exist." noindex canonicalPath="/404">
+  <SiteShell>
+    <main id="main-content" class="not-found page-pad">
+      <p class="eyebrow">404</p>
+      <h1>this path hasn't grown yet.</h1>
+      <p>the page you were looking for doesn't exist.</p>
+      <a href="/">return home</a>
+    </main>
+  </SiteShell>
+</BaseLayout>

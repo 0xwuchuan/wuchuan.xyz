@@ -1,0 +1,43 @@
+---
+import Doodle from "./Doodle.astro";
+
+export type Page = "about" | "work" | "projects" | "blog";
+
+interface Props {
+  activePage?: Page;
+}
+
+const { activePage } = Astro.props;
+const navigation = [
+  { label: "about", href: "/", page: "about", color: "cyan", doodle: "smiley", doodleClass: "nav-smiley" },
+  { label: "work", href: "/work", page: "work", color: "blue", doodle: "suitcase", doodleClass: "nav-suitcase" },
+  { label: "projects", href: "/projects", page: "projects", color: "red", doodle: "puzzle-piece", doodleClass: "nav-puzzle" },
+  { label: "digital garden", href: "/blog", page: "blog", color: "green", doodle: "clover", doodleClass: "nav-clover" },
+] as const;
+---
+
+<header class="site-header">
+  <a href="/" class="wordmark" aria-label="0xwuchuan home">
+    <span>0x</span>wuchuan
+  </a>
+  <nav aria-label="Primary" class="primary-nav">
+    {
+      navigation.map((item, index) => {
+        const active = activePage === item.page;
+        return (
+          <span class="nav-item-wrap">
+            {index > 0 && <span class="nav-divider" aria-hidden="true">/</span>}
+            <a
+              href={item.href}
+              aria-current={active ? "page" : undefined}
+              class:list={["nav-link", `nav-${item.color}`, { active }]}
+            >
+              {active && <Doodle name={item.doodle} class={`nav-doodle ${item.doodleClass}`} />}
+              {item.label}
+            </a>
+          </span>
+        );
+      })
+    }
+  </nav>
+</header>
