@@ -22,7 +22,7 @@ export default function NoteList({ notes, title, showAllLink = false, showTree =
       <ul>
         {notes.map((note, index) => (
           <li key={`${note.year}-${index}`} className="border-b border-ui-2">
-            <Link href={`/garden/notes/${note.slug}`} className="grid min-h-[43px] grid-cols-[109px_1fr] items-center gap-2 text-base leading-[26px] transition-colors duration-100 ease-out hover:text-green sm:grid-cols-[109px_677px]">
+            <Link href={`/garden/notes/${note.slug}`} className="grid min-h-[43px] grid-cols-[109px_minmax(0,1fr)] items-center gap-2 text-base leading-[26px] transition-colors duration-100 ease-out hover:text-green">
               <time className="text-tx-2">{note.date}{title === "latest notes" ? ` ${note.year}` : ""}</time>
               <span className="text-tx">{note.title}</span>
             </Link>

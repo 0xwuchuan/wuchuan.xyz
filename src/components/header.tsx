@@ -2,7 +2,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import Doodle from "@/components/doodle";
 
-type Page = "about" | "work" | "projects" | "garden";
+export type Page = "about" | "work" | "projects" | "garden";
 
 type HeaderProps = { activePage: Page };
 
@@ -22,7 +22,7 @@ const doodleSizes = {
 
 export default function Header({ activePage }: HeaderProps) {
   return (
-    <header className="flex min-h-[209px] flex-wrap font-satoshi items-center justify-between gap-x-6 gap-y-5 px-2 pb-8 pt-12 sm:w-[816px] sm:pt-24">
+    <header className="flex min-h-[209px] w-full flex-wrap items-center justify-between gap-x-6 gap-y-5 px-2 pb-8 pt-12 font-satoshi sm:pt-24">
       <Link href="/" className="shrink-0 text-[32px] font-black leading-9 tracking-[-0.04em]" aria-label="0xwuchuan home">
         <span className="text-tx-2">0x</span><span className="text-tx">wuchuan</span>
       </Link>

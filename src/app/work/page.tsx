@@ -1,6 +1,6 @@
 import { Metadata } from "next";
-import Header from "@/components/header";
 import { Experience, ExperienceProps } from "@/components/experience";
+import SiteShell from "@/components/site-shell";
 import experiences from "@/data/experiences.json";
 
 export const metadata: Metadata = { title: "work" };
@@ -13,8 +13,7 @@ export default function Work() {
   });
 
   return (
-    <div className="w-full max-w-[896px] px-6 text-tx sm:px-10">
-      <Header activePage="work" />
+    <SiteShell activePage="work">
       <main className="pt-2">
         {Object.keys(grouped).sort((a, b) => Number(b) - Number(a)).map((year) => (
           <section key={year}>
@@ -23,6 +22,6 @@ export default function Work() {
           </section>
         ))}
       </main>
-    </div>
+    </SiteShell>
   );
 }

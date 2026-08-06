@@ -1,14 +1,13 @@
 import { Metadata } from "next";
-import Header from "@/components/header";
 import NoteList from "@/components/note-list";
+import SiteShell from "@/components/site-shell";
 import { notes } from "@/data/notes";
 
 export const metadata: Metadata = { title: "digital garden" };
 
 export default function Garden() {
   return (
-    <div className="w-full max-w-[896px] px-6 text-tx sm:px-10">
-      <Header activePage="garden" />
+    <SiteShell activePage="garden">
       <main>
         <div className="px-2 text-base leading-[26px] text-tx">
           <p className="mb-5">
@@ -23,6 +22,6 @@ export default function Garden() {
         </div>
         <NoteList notes={notes.slice(0, 3)} title="latest notes" showAllLink showTree />
       </main>
-    </div>
+    </SiteShell>
   );
 }

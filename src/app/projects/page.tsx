@@ -1,6 +1,6 @@
 import { Metadata } from "next";
-import Header from "@/components/header";
 import { ProjectProps, Project } from "@components/project";
+import SiteShell from "@/components/site-shell";
 
 import projects from "@/data/projects.json";
 
@@ -14,11 +14,10 @@ export default function Projects() {
   );
 
   return (
-    <div className="w-full max-w-[782px] px-6 text-tx sm:px-10">
-      <Header activePage="projects" />
+    <SiteShell activePage="projects">
       {sortedProjects.map((project: ProjectProps) => (
         <Project key={project.name} {...project} />
       ))}
-    </div>
+    </SiteShell>
   );
 }

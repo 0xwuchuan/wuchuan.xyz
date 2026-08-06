@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import Header from "@/components/header";
+import SiteShell from "@/components/site-shell";
 
 const slug = "energy-is-the-language-of-our-soul";
 
@@ -12,8 +12,7 @@ export default function NotePage({ params }: { params: { slug: string } }) {
   if (params.slug !== slug) notFound();
 
   return (
-    <div className="w-full max-w-[896px] px-6 text-tx sm:px-10">
-      <Header activePage="garden" />
+    <SiteShell activePage="garden">
       <main className="px-2">
         <header>
           <h1 className="font-satoshi text-[34px] font-bold leading-[42px] tracking-[-0.035em] text-tx sm:text-[40px] sm:leading-[46px]">energy is the language of our soul</h1>
@@ -37,6 +36,6 @@ export default function NotePage({ params }: { params: { slug: string } }) {
           </p>
         </article>
       </main>
-    </div>
+    </SiteShell>
   );
 }
