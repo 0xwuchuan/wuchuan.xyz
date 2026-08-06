@@ -41,7 +41,8 @@ Connect this GitHub repository to a Worker and use:
 - Build command: `yarn build`
 - Deploy command: `yarn deploy`
 - Non-production deploy command: `yarn wrangler versions upload`
+- Build variable: `YARN_VERSION=1.22.22`
 
-`wrangler.jsonc` configures `./dist` as the static asset directory, clean no-trailing-slash routes, custom 404 handling, and the apex custom domain. Security and cache policy are defined in `public/_headers`.
+`.node-version` pins the Workers Builds runtime to Node 22.16, and the Yarn build variable keeps dependency installation aligned with the committed Yarn Classic lockfile. `wrangler.jsonc` configures `./dist` as the static asset directory, clean no-trailing-slash routes, custom 404 handling, and the apex custom domain. Security and cache policy are defined in `public/_headers`.
 
 Cloudflare dashboard work that is not represented in this repository: connect Workers Builds to GitHub; add a proxied `www` DNS record and a permanent zone redirect from `www.wuchuan.xyz/*` to `https://wuchuan.xyz/${1}`; remove the old `blog.wuchuan.xyz` DNS record; and enable Web Analytics.
