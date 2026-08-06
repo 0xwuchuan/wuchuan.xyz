@@ -21,7 +21,7 @@ export default function Garden() {
           </p>
         </div>
         <div className="pt-8">
-          <NoteList notes={notes.slice(0, 3)} title="latest notes" showAllLink showTree />
+          <NoteList notes={notes.slice(0, 3)} title="latest notes" showAllLink />
         </div>
       </main>
     </SiteShell>

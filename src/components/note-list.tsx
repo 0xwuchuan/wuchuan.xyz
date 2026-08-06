@@ -1,15 +1,13 @@
 import Link from "next/link";
-import Doodle from "@/components/doodle";
 import { Note } from "@/data/notes";
 
 type NoteListProps = {
   notes: Note[];
   title?: string;
   showAllLink?: boolean;
-  showTree?: boolean;
 };
 
-export default function NoteList({ notes, title, showAllLink = false, showTree = false }: NoteListProps) {
+export default function NoteList({ notes, title, showAllLink = false }: NoteListProps) {
   return (
     <section className="relative w-full px-2">
       {(title || showAllLink) && (
@@ -18,7 +16,6 @@ export default function NoteList({ notes, title, showAllLink = false, showTree =
           {showAllLink && <Link href="/garden/notes" className="text-tx-2 transition-colors duration-100 ease-out hover:text-green">view all notes &gt;</Link>}
         </div>
       )}
-      {showTree && <Doodle name="tree" className="absolute left-[101px] top-[3px] h-[22px] w-[18px] text-green" />}
       <ul>
         {notes.map((note, index) => (
           <li key={`${note.year}-${index}`} className="border-b border-ui-2">
