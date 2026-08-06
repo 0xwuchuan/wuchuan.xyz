@@ -14,7 +14,7 @@ export default function Projects() {
   );
 
   return (
-    <div className="w-full max-w-4xl px-6 text-tx sm:px-10">
+    <div className="w-full max-w-[782px] px-6 text-tx sm:px-10">
       <Header activePage="projects" />
       {sortedProjects.map((project: ProjectProps) => (
         <Project key={project.name} {...project} />
