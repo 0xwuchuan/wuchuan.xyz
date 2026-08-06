@@ -17,7 +17,7 @@ const doodleSizes = {
   smiley: "h-[34px] w-[42px] -top-[39px]",
   suitcase: "h-[37px] w-[46px] -top-[42px]",
   "puzzle-piece": "h-10 w-[38px] -top-[45px]",
-  clover: "size-8 -top-[37px]",
+  clover: "h-8 w-8 -top-[37px]",
 };
 
 export default function Header({ activePage }: HeaderProps) {
@@ -37,7 +37,7 @@ export default function Header({ activePage }: HeaderProps) {
                 aria-current={active ? "page" : undefined}
                 className={cn("relative transition-colors duration-100 ease-out", active ? item.color : cn("text-tx-2", item.hover))}
               >
-                {active && <Doodle name={item.doodle} className={cn("absolute left-1/2 -translate-x-1/2", doodleSizes[item.doodle])} />}
+                {active && <Doodle name={item.doodle} className={cn("absolute left-1/2 z-10 -translate-x-1/2", doodleSizes[item.doodle])} />}
                 {item.label}
               </Link>
             </div>

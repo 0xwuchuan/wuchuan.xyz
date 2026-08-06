@@ -18,7 +18,7 @@ export default function NoteList({ notes, title, showAllLink = false, showTree =
           {showAllLink && <Link href="/garden/notes" className="text-tx-2 transition-colors duration-100 ease-out hover:text-green">view all notes &gt;</Link>}
         </div>
       )}
-      {showTree && <Doodle name="tree" className="absolute left-[99px] top-[-6px] h-9 w-[29px] text-green" />}
+      {showTree && <Doodle name="tree" className="absolute left-[101px] top-[3px] h-[22px] w-[18px] text-green" />}
       <ul>
         {notes.map((note, index) => (
           <li key={`${note.year}-${index}`} className="border-b border-ui-2">

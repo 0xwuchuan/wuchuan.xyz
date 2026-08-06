@@ -20,7 +20,9 @@ export default function Garden() {
             digital gardening starts with the concept of evergreen notes. to be completely honest i don’t really understand evergreen notes fully but my objective is to experiment with evergreen notes myself and come to my own conclusion and my own approach to writing notes
           </p>
         </div>
-        <NoteList notes={notes.slice(0, 3)} title="latest notes" showAllLink showTree />
+        <div className="pt-8">
+          <NoteList notes={notes.slice(0, 3)} title="latest notes" showAllLink showTree />
+        </div>
       </main>
     </SiteShell>
   );
