@@ -25,5 +25,9 @@
     "@astrojs/check": "^0.9.10",
     "typescript": "^6.0.3",
     "wrangler": "^4.119.0"
+  },
+  "resolutions": {
+    "**/anymatch/picomatch": "2.3.2",
+    "undici": "7.29.0"
   }
 }
