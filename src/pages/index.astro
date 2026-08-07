@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Doodle from "../components/Doodle.astro";
+import ActivityToyBox from "../components/ActivityToyBox.astro";
 import Footer from "../components/Footer.astro";
 import SiteShell from "../components/SiteShell.astro";
 ---
@@ -17,12 +17,10 @@ import SiteShell from "../components/SiteShell.astro";
           i'm curious by nature and enjoy working on hard problems. i love learning about all things tech, and lately i've been going deep into blockchain technology, defi and ai.
         </p>
         <p>
-          i touch grass through, but am not limited to: travelling, climbing (plastic) rocks, voluntarily suffering through runs, playing and watching sports, and spending time with friends
+          i touch grass though, but am not limited to: travelling, climbing (plastic) rocks, voluntarily suffering through runs, playing and watching sports, and spending time with friends
         </p>
       </div>
-      <Doodle name="climbing-holds" class="activity-doodle climbing-doodle" />
-      <Doodle name="basketball" class="activity-doodle basketball-doodle" />
-      <Doodle name="running" class="activity-doodle running-doodle" />
+      <ActivityToyBox />
     </main>
     <Footer />
   </SiteShell>

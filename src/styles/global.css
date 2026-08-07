@@ -257,7 +257,6 @@ button:focus-visible {
 
 .about {
   position: relative;
-  min-height: 342px;
   padding-top: 8px;
   padding-bottom: 12px;
   text-transform: lowercase;
@@ -281,37 +280,6 @@ button:focus-visible {
 .site-footer a:hover,
 .site-footer button:hover {
   color: var(--cyan);
-}
-
-.activity-doodle {
-  position: absolute;
-}
-
-.climbing-doodle {
-  top: 226px;
-  left: 250px;
-  width: 86px;
-  height: 60px;
-  rotate: 12deg;
-  color: var(--purple);
-}
-
-.basketball-doodle {
-  top: 246px;
-  left: 76px;
-  width: 58px;
-  height: 54px;
-  rotate: -20deg;
-  color: var(--orange);
-}
-
-.running-doodle {
-  top: 240px;
-  left: 455px;
-  width: 82px;
-  height: 56px;
-  rotate: -7deg;
-  color: var(--magenta);
 }
 
 .site-footer {
@@ -548,13 +516,6 @@ button:focus-visible {
     white-space: normal;
   }
 
-  .activity-doodle {
-    display: none;
-  }
-
-  .about {
-    min-height: 0;
-  }
 }
 
 @media (max-width: 410px) {
