@@ -30,6 +30,7 @@
   --motion-fast: 100ms;
   --motion-normal: 180ms;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
   color-scheme: dark;
 }
 
@@ -219,14 +220,34 @@ button:focus-visible {
   position: absolute;
   left: 50%;
   z-index: 1;
-  transform: translateX(-50%);
-  visibility: hidden;
+  transform: translate(-50%, 65%) scale(0.95);
+  transform-origin: 50% 100%;
   opacity: 0;
+  transition:
+    transform var(--motion-normal) var(--ease-out),
+    opacity var(--motion-fast) var(--ease-out);
 }
 
 .nav-link.active .nav-doodle {
-  visibility: visible;
+  transform: translateX(-50%);
   opacity: 1;
+}
+
+@keyframes nav-doodle-wiggle {
+  0%, 100% { transform: translateX(-50%) rotate(0deg); }
+  35% { transform: translateX(-50%) rotate(-6deg); }
+  70% { transform: translateX(-50%) rotate(4deg); }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav-link:not(.active):hover .nav-doodle {
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+
+  .nav-link.active:hover .nav-doodle {
+    animation: nav-doodle-wiggle var(--motion-normal) var(--ease-in-out);
+  }
 }
 
 .nav-smiley { top: -20px; width: 20px; height: 16px; }
@@ -573,5 +594,18 @@ button:focus-visible {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+
+  .nav-doodle,
+  .nav-link:not(.active):hover .nav-doodle {
+    transform: translateX(-50%);
+  }
+
+  .nav-doodle {
+    transition-duration: var(--motion-fast) !important;
+  }
+
+  .nav-link.active:hover .nav-doodle {
+    animation: none;
   }
 }
