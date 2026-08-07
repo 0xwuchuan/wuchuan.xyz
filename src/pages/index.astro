@@ -3,6 +3,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ActivityToyBox from "../components/ActivityToyBox.astro";
 import Footer from "../components/Footer.astro";
 import SiteShell from "../components/SiteShell.astro";
+import experiences from "../data/experiences.json";
+
+const sortedExperiences = [...experiences].sort((a, b) => {
+  if (a.year === "current") return -1;
+  if (b.year === "current") return 1;
+  return Number(b.year) - Number(a.year);
+});
+const [currentExperience, previousExperience] = sortedExperiences;
 ---
 
 <BaseLayout description="0xwuchuan is a software engineer curious about blockchain, DeFi, AI, and hard technical problems.">
@@ -10,8 +18,8 @@ import SiteShell from "../components/SiteShell.astro";
     <main id="main-content" class="about page-pad">
       <div class="about-copy">
         <p>
-          currently a software engineer at <a href="https://www.okx.com/en-sg">okx</a>.
-          previously worked at ___ and others
+          currently a {currentExperience.title.toLowerCase()} at <a href={currentExperience.placelink}>{currentExperience.place.toLowerCase()}</a>.
+          previously worked at <a href={previousExperience.placelink}>{previousExperience.place.toLowerCase()}</a> and others
         </p>
         <p>
           i'm curious by nature and enjoy working on hard problems. i love learning about all things tech, and lately i've been going deep into blockchain technology, defi and ai.
